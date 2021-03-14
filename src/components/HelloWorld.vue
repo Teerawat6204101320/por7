@@ -772,12 +772,39 @@
         </div>
       </div>
     </div>
+
+    <!-- Footer start -->
+    <div class="footer">
+      <h5>PHONESTONE</h5>
+      <p>สามารถติดต่อสอบถามกับพวกเราได้ที่</p>
+      <ul class="socials">
+        <li>
+          <a href="https://www.facebook.com/tnr.pd/"
+            ><i class="fa fa-facebook-square"></i
+          ></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-twitter-square"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-youtube-square"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa fa-google-plus"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        copyright &copy;2021 codeOpacity. designed by
+        <span>Group Phone stone</span>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import firebase from "firebase/app";
-
 import { mapGetters } from "vuex";
 export default {
   data() {
@@ -791,11 +818,9 @@ export default {
   props: {
     msg: String,
   },
-
   computed: {
     ...mapGetters(["ip1"]),
   },
-
   beforeCreate() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user != null) {
@@ -811,7 +836,6 @@ export default {
       }
     });
   },
-
   methods: {
     ip1m() {
       //cloud firebase
@@ -819,7 +843,7 @@ export default {
         idname: this.namee,
         name: "iphone",
         version: "iPad ใหม่ รุ่น Wifi",
-        countped: 1,
+        countped: 0,
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 8990,
@@ -845,7 +869,7 @@ export default {
         idname: this.namee,
         name: "iphone",
         version: "iPhone 12 Pro (256GB)",
-        countped1: 1,
+        countped: 0,
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 27200,
@@ -867,6 +891,7 @@ export default {
     ipse64gb() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "iphone",
         version: "iPhone SE 64GB (2020)",
@@ -893,6 +918,7 @@ export default {
     samsungGalaxyA30s() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Samsung",
         version: "Galaxy A30s",
@@ -918,6 +944,7 @@ export default {
     samsungGalaxyA01() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Samsung",
         version: "Galaxy A01",
@@ -943,6 +970,7 @@ export default {
     samsungGalaxyA50S() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Samsung",
         version: "Galaxy A50S",
@@ -969,6 +997,7 @@ export default {
     oppoReno5Pro5G() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Oppo",
         version: "Reno 5 Pro 5G",
@@ -993,6 +1022,7 @@ export default {
     oppoReno4() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Oppo",
         version: "Reno 4",
@@ -1017,6 +1047,7 @@ export default {
     oppoA93() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Oppo",
         version: "A93",
@@ -1042,6 +1073,7 @@ export default {
     XiaomiMi10TPro5G() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Xiaomi",
         version: "Mi 10T Pro 5G",
@@ -1066,6 +1098,7 @@ export default {
     XiaomiMiA3() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Xiaomi",
         version: "Mi A3",
@@ -1091,6 +1124,7 @@ export default {
     XiaomiRedminote8() {
       //cloud firebase
       const dataText = {
+        countped: 0,
         idname: this.namee,
         name: "Xiaomi",
         version: "Redmi note 8",
@@ -1351,6 +1385,68 @@ export default {
   margin: 10px;
   padding: 10px 50px;
   border-radius: 20px;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  height: 32%;
+  background: rgb(54, 53, 53);
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+  scrollbar-shadow-color: 0px 10 px 5px black;
+  padding: 2em;
+  font-family: "Kanit", sans-serif;
+}
+.footer h5 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 12px;
+}
+.socials {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  right: 20px;
+}
+.socials i {
+  margin: 0 10px;
+}
+.socials a {
+  color: #fff;
+}
+.socials a i {
+  transition: color 0.4s;
+}
+.socials a:hover i {
+  color: rgb(255, 167, 4);
+}
+.footer-bottom {
+  background: rgb(27, 27, 27);
+  width: 100%;
+  height: 50px;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+}
+.footer-bottom p {
+  font-size: 11px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
 }
 @media screen and (max-width: 1200px) {
   .product .product-card {

@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import 'v-slim-dialog/dist/v-slim-dialog.css'
+import SlimDialog from 'v-slim-dialog'
 import App from './App.vue'
 import store from './store'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -24,6 +26,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig)
 }
 
+Vue.use(SlimDialog)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false

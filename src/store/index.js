@@ -5,35 +5,49 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    ue:0,
-    // iphon start
-    incart: 1,
-    price: 8990,
-    incart1: 1,
-    price1: 27200,
-    incart2: 0,
-    price2: 12590,
-    // samsung start
-    incart3: 0,
-    price3: 5500,
-    incart4: 1,
-    price4: 2994,
-    incart5: 1,
-    price5: 8420,
-    // oppo start
-    incart6: 1,
-    price6: 19990,
-    incart7: 1,
-    price7: 10990,
-    incart8: 1,
-    price8: 8999,
-    // xiaomi start
-    incart9: 1,
-    price9: 5500,
-    incart10: 1,
-    price10: 2994,
-    incart11: 1,
-    price11: 8420,
+    padsum: 0,
+    iphone12sum: 0,
+
+    IPhoneSE64GBsum: 0,
+    samsungGalaxyA30ssum: 0,
+    samsungGalaxyA01sum: 0,
+    samsungGalaxyA50Ssum: 0,
+    oppoReno5Pro5Gsum: 0,
+    oppoReno4sum: 0,
+    oppoA93sum: 0,
+    XiaomiMi10TPro5Gsum: 0,
+    XiaomiMiA3sum: 0,
+    XiaomiRedminote8sum: 0,
+
+    // ue: 0,
+    // // iphon start
+    // incart: 1,
+    // price: 8990,
+    // incart1: 1,
+    // price1: 27200,
+    // incart2: 1,
+    // price2: 12590,
+    // // samsung start
+    // incart3: 1,
+    // price3: 5500,
+    // incart4: 1,
+    // price4: 2994,
+    // incart5: 1,
+    // price5: 8420,
+    // // oppo start
+    // incart6: 1,
+    // price6: 19990,
+    // incart7: 1,
+    // price7: 10990,
+    // incart8: 1,
+    // price8: 8999,
+    // // xiaomi start
+    // incart9: 1,
+    // price9: 5500,
+    // incart10: 1,
+    // price10: 2994,
+    // incart11: 1,
+    // price11: 8420,
 
     samsung: [
       {
@@ -162,7 +176,7 @@ export default new Vuex.Store({
         version: "iPhone SE 64GB (2020)",
         img:
           "https://media-dtaconline.dtac.co.th/catalog/product/cache/e96373d1c57081d0b326a3dfa1f55e67/s/e/se_wh_3_5.jpg",
-        price: 27200,
+        price: 13590,
         about1:
           "จอภาพ Multi‑Touch ไวด์สกรีน แบบ LCD ขนาด 4.7 นิ้ว (แนวทแยง) พร้อมเทคโนโลยี IPS",
         about2:
@@ -279,13 +293,185 @@ export default new Vuex.Store({
     ip1: state => {
       return state.ip1
     },
+    padsumm: state => {
+      return state.padsum
+    },
+    iphone12summ: state => {
+      return state.iphone12sum
+    },
+    IPhoneSE64GBsumm: state => {
+      return state.IPhoneSE64GBsum
+    },
+    samsungGalaxyA30ssumm: state => {
+      return state.samsungGalaxyA30ssum
+    },
+    samsungGalaxyA01summ: state => {
+      return state.samsungGalaxyA01sum
+    },
+    samsungGalaxyA50Ssumm: state => {
+      return state.samsungGalaxyA50Ssum
+    },
+    oppoReno5Pro5Gsumm: state => {
+      return state.oppoReno5Pro5Gsum
+    },
+    oppoReno4summ: state => {
+      return state.oppoReno4sum
+    },
+    oppoA93summ: state => {
+      return state.oppoA93sum
+    },
+    XiaomiMi10TPro5Gsumm: state => {
+      return state.XiaomiMi10TPro5Gsum
+    },
+    XiaomiMiA3summ: state => {
+      return state.XiaomiMiA3sum
+    },
+    XiaomiRedminote8summ: state => {
+      return state.XiaomiRedminote8sum
+    },
+
   },
   mutations: {
     ip1: (state) => {
       state.ip1 += 1
       state.ip1price += 8990
-
     },
+    depad: (state) => {
+      state.price -= 8990
+    },
+
+    //-------pad-----
+    padadd: (state) => {
+      state.padsum += 8990
+    },
+    padde: (state) => {
+      state.padsum -= 8990
+    },
+    clspad: (state) => {
+      state.padsum = 0
+    },
+
+    //-------iphone12-----
+    addiphone12: (state) => {
+      state.iphone12sum += 27200
+    },
+    deiphone12: (state) => {
+      state.iphone12sum -= 27200
+    },
+    clsiphone12: (state) => {
+      state.iphone12sum = 0
+    },
+
+    //------IPhoneSE64GB
+    addIPhoneSE64GB: (state) => {
+      state.IPhoneSE64GBsum += 13590
+    },
+    deIPhoneSE64GB: (state) => {
+      state.IPhoneSE64GBsum -= 13590
+    },
+    clsIPhoneSE64GB: (state) => {
+      state.IPhoneSE64GBsum = 0
+    },
+
+    //------samsungGalaxyA30s
+    addsamsungGalaxyA30s: (state) => {
+      state.samsungGalaxyA30ssum += 5500
+    },
+    desamsungGalaxyA30s: (state) => {
+      state.samsungGalaxyA30ssum -= 5500
+    },
+    clssamsungGalaxyA30s: (state) => {
+      state.samsungGalaxyA30ssum = 0
+    },
+
+    //------samsungGalaxyA01
+    addsamsungGalaxyA01: (state) => {
+      state.samsungGalaxyA01sum += 2994
+    },
+    desamsungGalaxyA01: (state) => {
+      state.samsungGalaxyA01sum -= 2994
+    },
+    clssamsungGalaxyA01: (state) => {
+      state.samsungGalaxyA01sum = 0
+    },
+
+    //------samsungGalaxyA50S
+    addsamsungGalaxyA50S: (state) => {
+      state.samsungGalaxyA50Ssum += 8420
+    },
+    desamsungGalaxyA50S: (state) => {
+      state.samsungGalaxyA50Ssum -= 8420
+    },
+    clssamsungGalaxyA50S: (state) => {
+      state.samsungGalaxyA50Ssum = 0
+    },
+
+    //------oppoReno5Pro5G
+    addoppoReno5Pro5G: (state) => {
+      state.oppoReno5Pro5Gsum += 19990
+    },
+    deoppoReno5Pro5G: (state) => {
+      state.oppoReno5Pro5Gsum -= 19990
+    },
+    clsoppoReno5Pro5G: (state) => {
+      state.oppoReno5Pro5Gsum = 0
+    },
+
+    //------oppoReno4
+    addoppoReno4: (state) => {
+      state.oppoReno4sum += 10990
+    },
+    deoppoReno4: (state) => {
+      state.oppoReno4sum -= 10990
+    },
+    clsoppoReno4: (state) => {
+      state.oppoReno4sum = 0
+    },
+
+    //------oppoA93
+    addoppoA93: (state) => {
+      state.oppoA93sum += 8999
+    },
+    deoppoA93: (state) => {
+      state.oppoA93sum -= 8999
+    },
+    clsoppoA93: (state) => {
+      state.oppoA93sum = 0
+    },
+
+    //------XiaomiMi10TPro5G
+    addXiaomiMi10TPro5G: (state) => {
+      state.XiaomiMi10TPro5Gsum += 15990
+    },
+    deXiaomiMi10TPro5G: (state) => {
+      state.XiaomiMi10TPro5Gsum -= 15990
+    },
+    clsXiaomiMi10TPro5G: (state) => {
+      state.XiaomiMi10TPro5Gsum = 0
+    },
+
+    //------XiaomiMiA3
+    addXiaomiMiA3: (state) => {
+      state.XiaomiMiA3sum += 6897
+    },
+    deXiaomiMiA3: (state) => {
+      state.XiaomiMiA3sum -= 6897
+    },
+    clsXiaomiMiA3: (state) => {
+      state.XiaomiMiA3sum = 0
+    },
+
+    //------XiaomiRedminote8
+    addXiaomiRedminote8: (state) => {
+      state.XiaomiRedminote8sum += 5990
+    },
+    deXiaomiRedminote8: (state) => {
+      state.XiaomiRedminote8sum -= 5990
+    },
+    clsXiaomiRedminote8: (state) => {
+      state.XiaomiRedminote8sum = 0
+    },
+
   },
   actions: {},
   modules: {}
