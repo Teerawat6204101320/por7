@@ -5,15 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    ue:0,
     // iphon start
     incart: 1,
     price: 8990,
     incart1: 1,
     price1: 27200,
-    incart2: 1,
+    incart2: 0,
     price2: 12590,
     // samsung start
-    incart3: 1,
+    incart3: 0,
     price3: 5500,
     incart4: 1,
     price4: 2994,

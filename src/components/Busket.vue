@@ -19,39 +19,39 @@
             {{ item.version }}
           </td>
           <td>
-            <i class="fa fa-plus-square" @click="$store.state.incart++"></i>
-            <div id="pr">{{ $store.state.incart }}</div>
+            <i class="fa fa-plus-square" @click="item.countped++"></i>
+            <div id="pr">{{ item.countped }}</div>
             <i
-              v-if="$store.state.incart >= 2"
+              v-if="item.countped >= 2"
               class="fa fa-minus-square"
-              @click="$store.state.incart--"
+              @click="item.countped--"
             ></i>
           </td>
-          <td id="to">{{ $store.state.price * $store.state.incart }}</td>
+          <td id="to">{{ item.price * item.countped }}</td>
           <td class="imgwi">
             <i
               class="fa fa-times-circle"
               @click="cls()"
-              v-on:click="myFunction()"
+              
             ></i>
           </td>
         </tr>
 
-        <tr v-for="(item, key) in textListiphone12" :key="key">
+        <tr v-for="(item1, key) in textListiphone12" :key="key">
           <td>
-            <img :src="item.img" alt="" />
+            <img :src="item1.img" alt="" />
           </td>
-          <td>{{ item.name }} {{ item.version }}</td>
+          <td>{{ item1.name }} {{ item1.version }}</td>
           <td>
-            <i class="fa fa-plus-square" @click="$store.state.incart1++"></i>
-            <div>{{ $store.state.incart1 }}</div>
+            <i class="fa fa-plus-square" @click="item1.countped1++"></i>
+            <div>{{ item1.countped1}}</div>
             <i
-              v-if="$store.state.incart1 >= 2"
+              v-if="item1.countped1 >= 2"
               class="fa fa-minus-square"
-              @click="$store.state.incart1--"
+              @click="item1.countped1--"
             ></i>
           </td>
-          <td>{{ $store.state.price1 * $store.state.incart1 }}</td>
+          <td>{{ item1.price * item1.countped1 }}</td>
           <td class="imgwi">
             <i class="fa fa-times-circle" @click="cls1()"> </i>
           </td>
@@ -63,43 +63,206 @@
           </td>
           <td>{{ item.name }} {{ item.version }}</td>
           <td>
-            <i class="fa fa-plus-square" @click="$store.state.incart1++"></i>
-            <div>{{ $store.state.incart1 }}</div>
+            <i class="fa fa-plus-square" @click="$store.state.incart2++"></i>
+            <div>{{ $store.state.incart2 }}</div>
             <i
-              v-if="$store.state.incart1 >= 2"
+              v-if="$store.state.incart2 >= 2"
               class="fa fa-minus-square"
-              @click="$store.state.incart1--"
+              @click="$store.state.incart2--"
             ></i>
           </td>
-          <td>{{ $store.state.price1 * $store.state.incart1 }}</td>
+          <td>{{ $store.state.price2 * $store.state.incart2 }}</td>
           <td class="imgwi">
-            <i class="fa fa-times-circle" @click="cls1()"> </i>
+            <i class="fa fa-times-circle" @click="cls2()"> </i>
           </td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+
+        <tr v-for="(item, key) in textListsamsungGalaxyA30s" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart3++"></i>
+            <div>{{ $store.state.incart3 }}</div>
+            <i
+              v-if="$store.state.incart3 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart3--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price3 * $store.state.incart3 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls3()"> </i>
+          </td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+
+        <tr v-for="(item, key) in textListsamsungGalaxyA01" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart4++"></i>
+            <div>{{ $store.state.incart4 }}</div>
+            <i
+              v-if="$store.state.incart4 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart4--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price4 * $store.state.incart4}}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls4()"> </i>
+          </td>
         </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+
+        <tr v-for="(item, key) in  textListsamsungGalaxyA50S" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart5++"></i>
+            <div>{{ $store.state.incart5 }}</div>
+            <i
+              v-if="$store.state.incart5 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart5--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price5 * $store.state.incart5 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls5()"> </i>
+          </td>
         </tr>
+
+         <tr v-for="(item, key) in  textListoppoReno5Pro5G" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart6++"></i>
+            <div>{{ $store.state.incart6}}</div>
+            <i
+              v-if="$store.state.incart6 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart6--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price6 * $store.state.incart6 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls6()"> </i>
+          </td>
+        </tr>
+
+        <tr v-for="(item, key) in  textListoppoReno4" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart7++"></i>
+            <div>{{ $store.state.incart7 }}</div>
+            <i
+              v-if="$store.state.incart7 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart7--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price7 * $store.state.incart7 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls7()"> </i>
+          </td>
+        </tr>
+
+         <tr v-for="(item, key) in  textListoppoA93" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart8++"></i>
+            <div>{{ $store.state.incart8 }}</div>
+            <i
+              v-if="$store.state.incart8 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart8--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price8 * $store.state.incart8 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls8()"> </i>
+          </td>
+        </tr>
+
+        <tr v-for="(item, key) in  textListXiaomiMi10TPro5G" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart9++"></i>
+            <div>{{ $store.state.incart9 }}</div>
+            <i
+              v-if="$store.state.incart9 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart9--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price9 * $store.state.incart9 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls9()"> </i>
+          </td>
+        </tr>
+
+        <tr v-for="(item, key) in  textListXiaomiMiA3" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart10++"></i>
+            <div>{{ $store.state.incart10 }}</div>
+            <i
+              v-if="$store.state.incart10 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart10--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price10 * $store.state.incart10 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls10()"> </i>
+          </td>
+        </tr>
+
+        <tr v-for="(item, key) in   textListXiaomiRedminote8" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart111++"></i>
+            <div>{{ $store.state.incart11 }}</div>
+            <i
+              v-if="$store.state.incart11 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart11--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price11 * $store.state.incart11 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls11()"> </i>
+          </td>
+        </tr>
+       
         <tr>
           <td></td>
           <td></td>
           <td>TOTAL</td>
           <td class="total">
-            {{
-              $store.state.price * $store.state.incart +
-              $store.state.price1 * $store.state.incart1
-            }}
+           
           </td>
         </tr>
       </table>
@@ -129,6 +292,7 @@ export default {
       textListXiaomiMi10TPro5G: [],
       textListXiaomiMiA3: [],
       textListXiaomiRedminote8: [],
+      namee: null,
     };
   },
   beforeCreate() {
@@ -153,7 +317,7 @@ export default {
     getData() {
       firebase
         .firestore()
-        .collection("IPhone")
+        .collection("IPhonepad")
         .orderBy("idname")
         .onSnapshot((querySnapshot) => {
           var data = [];
@@ -290,7 +454,7 @@ export default {
     cls() {
       firebase
         .firestore()
-        .collection("IPhone")
+        .collection("IPhonepad")
         .doc(this.namee)
         .delete()
         .then(() => {
