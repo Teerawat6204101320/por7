@@ -5,10 +5,35 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    incart:1,
-    price:8990,
-    incart1:1,
-    price1:27200,
+    // iphon start
+    incart: 1,
+    price: 8990,
+    incart1: 1,
+    price1: 27200,
+    incart2: 1,
+    price2: 12590,
+    // samsung start
+    incart3: 1,
+    price3: 5500,
+    incart4: 1,
+    price4: 2994,
+    incart5: 1,
+    price5: 8420,
+    // oppo start
+    incart6: 1,
+    price6: 19990,
+    incart7: 1,
+    price7: 10990,
+    incart8: 1,
+    price8: 8999,
+    // xiaomi start
+    incart9: 1,
+    price9: 5500,
+    incart10: 1,
+    price10: 2994,
+    incart11: 1,
+    price11: 8420,
+
     samsung: [
       {
         name: "Samsung",
@@ -247,17 +272,17 @@ export default new Vuex.Store({
     xiaoMi: state => {
       return state.xiaomi;
     },
-    addcartsum: state =>{
+    addcartsum: state => {
       return state.addcartsum
     },
-    ip1: state =>{
+    ip1: state => {
       return state.ip1
     },
   },
   mutations: {
-    ip1:(state)=>{
-      state.ip1 +=1
-      state.ip1price +=8990
+    ip1: (state) => {
+      state.ip1 += 1
+      state.ip1price += 8990
 
     },
   },

@@ -29,11 +29,35 @@
           </td>
           <td id="to">{{ $store.state.price * $store.state.incart }}</td>
           <td class="imgwi">
-            <i class="fa fa-times-circle" @click="cls()" v-on:click="myFunction()"></i>
+            <i
+              class="fa fa-times-circle"
+              @click="cls()"
+              v-on:click="myFunction()"
+            ></i>
           </td>
         </tr>
-        
+
         <tr v-for="(item, key) in textListiphone12" :key="key">
+          <td>
+            <img :src="item.img" alt="" />
+          </td>
+          <td>{{ item.name }} {{ item.version }}</td>
+          <td>
+            <i class="fa fa-plus-square" @click="$store.state.incart1++"></i>
+            <div>{{ $store.state.incart1 }}</div>
+            <i
+              v-if="$store.state.incart1 >= 2"
+              class="fa fa-minus-square"
+              @click="$store.state.incart1--"
+            ></i>
+          </td>
+          <td>{{ $store.state.price1 * $store.state.incart1 }}</td>
+          <td class="imgwi">
+            <i class="fa fa-times-circle" @click="cls1()"> </i>
+          </td>
+        </tr>
+
+        <tr v-for="(item, key) in textListIPhoneSE64GB" :key="key">
           <td>
             <img :src="item.img" alt="" />
           </td>
@@ -70,18 +94,13 @@
         <tr>
           <td></td>
           <td></td>
-          <td></td>
-        </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td>TOTAL</td>
-        <td class="total">
-          {{
-            $store.state.price * $store.state.incart +
-            $store.state.price1 * $store.state.incart1
-          }}
-        </td>
+          <td>TOTAL</td>
+          <td class="total">
+            {{
+              $store.state.price * $store.state.incart +
+              $store.state.price1 * $store.state.incart1
+            }}
+          </td>
         </tr>
       </table>
 
@@ -99,8 +118,17 @@ export default {
   data: function () {
     return {
       textList: [],
-      namee: null,
       textListiphone12: [],
+      textListIPhoneSE64GB: [],
+      textListsamsungGalaxyA30s: [],
+      textListsamsungGalaxyA01: [],
+      textListsamsungGalaxyA50S: [],
+      textListoppoReno5Pro5G: [],
+      textListoppoReno4: [],
+      textListoppoA93: [],
+      textListXiaomiMi10TPro5G: [],
+      textListXiaomiMiA3: [],
+      textListXiaomiRedminote8: [],
     };
   },
   beforeCreate() {
@@ -119,9 +147,9 @@ export default {
     });
   },
   methods: {
- myFunction() {
-  document.getElementById("to").reset();
-},
+    myFunction() {
+      document.getElementById("to").reset();
+    },
     getData() {
       firebase
         .firestore()
@@ -144,6 +172,119 @@ export default {
             data.push(doc.data());
           });
           this.textListiphone12 = data;
+        });
+      firebase
+        .firestore()
+        .collection("IPhoneSE64GB")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListIPhoneSE64GB = data;
+        });
+      //-----------------------------SAMSUNG
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA30s")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListsamsungGalaxyA30s = data;
+        });
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA01")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListsamsungGalaxyA01 = data;
+        });
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA50S")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListsamsungGalaxyA50S = data;
+        });
+      //-----------------------------OPPO
+      firebase
+        .firestore()
+        .collection("oppoReno5Pro5G")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListoppoReno5Pro5G = data;
+        });
+      firebase
+        .firestore()
+        .collection("oppoReno4")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListoppoReno4 = data;
+        });
+      firebase
+        .firestore()
+        .collection("oppoA93")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListoppoA93 = data;
+        });
+      //-----------------------------XIAOMI
+      firebase
+        .firestore()
+        .collection("XiaomiMi10TPro5G")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListXiaomiMi10TPro5G = data;
+        });
+      firebase
+        .firestore()
+        .collection("XiaomiMiA3")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListXiaomiMiA3 = data;
+        });
+      firebase
+        .firestore()
+        .collection("XiaomiRedminote8")
+        .orderBy("idname")
+        .onSnapshot((querySnapshot) => {
+          var data = [];
+          querySnapshot.forEach((doc) => {
+            data.push(doc.data());
+          });
+          this.textListXiaomiRedminote8 = data;
         });
     },
     cls() {
@@ -171,7 +312,139 @@ export default {
         .catch((error) => {
           console.error("Error removing document: ", error);
         });
-
+    },
+    cls2() {
+      firebase
+        .firestore()
+        .collection("IPhoneSE64GB")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    //-----------------------------SAMSUNG---CLS
+    cls3() {
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA30s")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls4() {
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA01")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls5() {
+      firebase
+        .firestore()
+        .collection("samsungGalaxyA50S")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    //-----------------------------OPPO---CLS
+    cls6() {
+      firebase
+        .firestore()
+        .collection("oppoReno5Pro5G")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls7() {
+      firebase
+        .firestore()
+        .collection("oppoReno4")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls8() {
+      firebase
+        .firestore()
+        .collection("oppoA93")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    //-----------------------------XIAOMI---CLS
+    cls9() {
+      firebase
+        .firestore()
+        .collection("XiaomiMi10TPro5G")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls10() {
+      firebase
+        .firestore()
+        .collection("XiaomiMiA3")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+    },
+    cls11() {
+      firebase
+        .firestore()
+        .collection("XiaomiRedminote8")
+        .doc(this.namee)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
     },
   },
   created() {
@@ -247,7 +520,7 @@ tr td img {
   padding-left: -10px;
   color: #fff;
 }
-.total{
+.total {
   border-bottom: double #fff;
 }
 </style>
