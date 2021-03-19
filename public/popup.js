@@ -7,9 +7,9 @@ var popup = function (popupClick) {
     popupViews[popupClick].classList.add('active');
 }
 
-popupBtns.forEach((popupBtn, i) => {
+popupBtns.forEach((popupBtn, k) => {
     popupBtn.addEventListener("click", () => {
-        popup(i);
+        popup(k);
     });
 });
 

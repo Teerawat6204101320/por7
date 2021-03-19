@@ -811,31 +811,31 @@ export default {
     return {
       namee: null,
       updateipad: null,
-      email: null,
+      email: null
     };
   },
   name: "HelloWorld",
   props: {
-    msg: String,
+    msg: String
   },
   computed: {
-    ...mapGetters(["ip1"]),
+    ...mapGetters(["ip1"])
   },
-  beforeCreate() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user != null) {
-        // User is signed in.
-        //ให้แสดง ชื่อ รูป e-mail
-        this.namee = user.displayName;
-        this.email = user.email;
-        // this.photoUrl = user.photoURL
-      } else {
-        // No user is signed in.
-        //กลับไปหน้า login
-        this.$router.replace("/login");
-      }
-    });
-  },
+  // beforeCreate() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     if (user != null) {
+  //       // User is signed in.
+  //       //ให้แสดง ชื่อ รูป e-mail
+  //       this.namee = user.displayName;
+  //       this.email = user.email;
+  //       // this.photoUrl = user.photoURL
+  //     } else {
+  //       // No user is signed in.
+  //       //กลับไปหน้า login
+  //       this.$router.replace("/login");
+  //     }
+  //   });
+  // },
   methods: {
     ip1m() {
       //cloud firebase
@@ -848,7 +848,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 8990,
         img:
-          "https://media-dtaconline.dtac.co.th/catalog/product/cache/e96373d1c57081d0b326a3dfa1f55e67/i/p/ipad_wi-fi_10.2_in_gold.png",
+          "https://media-dtaconline.dtac.co.th/catalog/product/cache/e96373d1c57081d0b326a3dfa1f55e67/i/p/ipad_wi-fi_10.2_in_gold.png"
       };
       firebase
         .firestore()
@@ -859,7 +859,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -873,7 +873,7 @@ export default {
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 27200,
-        img: "https://dynamic-cdn.eggdigital.com/d8lUtygaD.jpg",
+        img: "https://dynamic-cdn.eggdigital.com/d8lUtygaD.jpg"
       };
       firebase
         .firestore()
@@ -884,7 +884,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -899,7 +899,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 12590,
         img:
-          "https://media-dtaconline.dtac.co.th/catalog/product/cache/e96373d1c57081d0b326a3dfa1f55e67/s/e/se_wh_3_5.jpg",
+          "https://media-dtaconline.dtac.co.th/catalog/product/cache/e96373d1c57081d0b326a3dfa1f55e67/s/e/se_wh_3_5.jpg"
       };
       firebase
         .firestore()
@@ -910,7 +910,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -926,7 +926,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 5500,
         img:
-          "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTp92X8-Kj_MO9VfUgaYHVsNHgwjs-Bnqitfa3Oxytxj_tWEiwiZJUattPML3_y5kfNkRWtIWrmYyS-KroZQmmam73j31ebOSp3caU&usqp=CAY",
+          "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTp92X8-Kj_MO9VfUgaYHVsNHgwjs-Bnqitfa3Oxytxj_tWEiwiZJUattPML3_y5kfNkRWtIWrmYyS-KroZQmmam73j31ebOSp3caU&usqp=CAY"
       };
       firebase
         .firestore()
@@ -937,7 +937,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -952,7 +952,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 2994,
         img:
-          "https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/0/0/000252358_t.jpg",
+          "https://res.cloudinary.com/cenergy-innovation-limited-head-office/image/fetch/c_scale,q_70,f_auto,h_740/https://d1dtruvuor2iuy.cloudfront.net/media/catalog/product/0/0/000252358_t.jpg"
       };
       firebase
         .firestore()
@@ -963,7 +963,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -978,7 +978,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 8420,
         img:
-          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAhV_kuwybQ4XOqK7CjclGhNyI9SiiVIgJwCYspB9Tz3dl--p1&usqp=CAY",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRAhV_kuwybQ4XOqK7CjclGhNyI9SiiVIgJwCYspB9Tz3dl--p1&usqp=CAY"
       };
       firebase
         .firestore()
@@ -989,7 +989,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1004,7 +1004,7 @@ export default {
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 19990,
-        img: "https://dynamic-cdn.eggdigital.com/uRuDDOFp.jpg",
+        img: "https://dynamic-cdn.eggdigital.com/uRuDDOFp.jpg"
       };
       firebase
         .firestore()
@@ -1015,7 +1015,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1029,7 +1029,7 @@ export default {
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 10990,
-        img: "https://dynamic-cdn.eggdigital.com/ed810lrpN.jpg",
+        img: "https://dynamic-cdn.eggdigital.com/ed810lrpN.jpg"
       };
       firebase
         .firestore()
@@ -1040,7 +1040,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1054,7 +1054,7 @@ export default {
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 8999,
-        img: "https://dynamic-cdn.eggdigital.com/cZAFAexsd.jpg",
+        img: "https://dynamic-cdn.eggdigital.com/cZAFAexsd.jpg"
       };
       firebase
         .firestore()
@@ -1065,7 +1065,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1080,7 +1080,7 @@ export default {
         Email: this.email,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 15990,
-        img: "https://dynamic-cdn.eggdigital.com/c9d0ILmMP.jpg",
+        img: "https://dynamic-cdn.eggdigital.com/c9d0ILmMP.jpg"
       };
       firebase
         .firestore()
@@ -1091,7 +1091,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1106,7 +1106,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 6897,
         img:
-          "https://imgaz3.staticbg.com/thumb/large/oaupload/banggood/images/36/AB/ba7b2915-0e44-460c-ae2f-8ebaa3b269f3.jpg.webp",
+          "https://imgaz3.staticbg.com/thumb/large/oaupload/banggood/images/36/AB/ba7b2915-0e44-460c-ae2f-8ebaa3b269f3.jpg.webp"
       };
       firebase
         .firestore()
@@ -1117,7 +1117,7 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
     },
@@ -1132,7 +1132,7 @@ export default {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         price: 5990,
         img:
-          "https://imgaz.staticbg.com/thumb/large/oaupload/ser1/banggood/images/80/8B/12b44626-3bb0-46d3-8db5-5c293a74944f.jpg.webp",
+          "https://imgaz.staticbg.com/thumb/large/oaupload/ser1/banggood/images/80/8B/12b44626-3bb0-46d3-8db5-5c293a74944f.jpg.webp"
       };
       firebase
         .firestore()
@@ -1143,11 +1143,11 @@ export default {
           console.log("Document successfully written! -> MyText");
           location.reload();
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error writing document: ", error);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 

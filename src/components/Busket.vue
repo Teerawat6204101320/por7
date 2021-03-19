@@ -354,17 +354,17 @@
           <td>
             {{
               padsumm +
-              iphone12summ +
-              IPhoneSE64GBsumm +
-              samsungGalaxyA30ssumm +
-              samsungGalaxyA01summ +
-              samsungGalaxyA50Ssumm +
-              oppoReno5Pro5Gsumm +
-              oppoReno4summ +
-              oppoA93summ +
-              XiaomiMi10TPro5Gsumm +
-              XiaomiMiA3summ +
-              XiaomiRedminote8summ
+                iphone12summ +
+                IPhoneSE64GBsumm +
+                samsungGalaxyA30ssumm +
+                samsungGalaxyA01summ +
+                samsungGalaxyA50Ssumm +
+                oppoReno5Pro5Gsumm +
+                oppoReno4summ +
+                oppoA93summ +
+                XiaomiMi10TPro5Gsumm +
+                XiaomiMiA3summ +
+                XiaomiRedminote8summ
             }}
           </td>
         </tr>
@@ -372,13 +372,12 @@
 
       <div class="acer">
         <div class="sub">
-          <input type="submit" value="Acept" @click="greet" v-on:click="clsAll()" onClick="javascript:location.reload();"/>
+          <input type="submit" value="Acept" @click="clsAll(), greet()" />
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 import firebase from "firebase/app";
@@ -397,10 +396,10 @@ export default {
       "oppoA93summ",
       "XiaomiMi10TPro5Gsumm",
       "XiaomiMiA3summ",
-      "XiaomiRedminote8summ",
-    ]),
+      "XiaomiRedminote8summ"
+    ])
   },
-  data: function () {
+  data: function() {
     return {
       textList: [],
       textListiphone12: [],
@@ -413,11 +412,11 @@ export default {
       textListoppoA93: [],
       textListXiaomiMi10TPro5G: [],
       textListXiaomiMiA3: [],
-      textListXiaomiRedminote8: [],
+      textListXiaomiRedminote8: []
     };
   },
   beforeCreate() {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(user => {
       if (user != null) {
         // User is signed in.
         //ให้แสดง ชื่อ รูป e-mail
@@ -432,11 +431,13 @@ export default {
     });
   },
   methods: {
-    greet: function () {
+    greet() {
       // `this` inside methods points to the Vue instance
       alert("คุณได้สั่งสิ้นค้าเรียบร้อย ");
       // `event` is the native DOM event
+      this.$router.replace("/");
     },
+
     //------ped
     padadd() {
       this.$store.commit("padadd");
@@ -566,9 +567,9 @@ export default {
         .firestore()
         .collection("IPhonepad")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textList = data;
@@ -577,9 +578,9 @@ export default {
         .firestore()
         .collection("IPhone12")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListiphone12 = data;
@@ -588,9 +589,9 @@ export default {
         .firestore()
         .collection("IPhoneSE64GB")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListIPhoneSE64GB = data;
@@ -600,9 +601,9 @@ export default {
         .firestore()
         .collection("samsungGalaxyA30s")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListsamsungGalaxyA30s = data;
@@ -611,9 +612,9 @@ export default {
         .firestore()
         .collection("samsungGalaxyA01")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListsamsungGalaxyA01 = data;
@@ -622,9 +623,9 @@ export default {
         .firestore()
         .collection("samsungGalaxyA50S")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListsamsungGalaxyA50S = data;
@@ -634,9 +635,9 @@ export default {
         .firestore()
         .collection("oppoReno5Pro5G")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListoppoReno5Pro5G = data;
@@ -645,9 +646,9 @@ export default {
         .firestore()
         .collection("oppoReno4")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListoppoReno4 = data;
@@ -656,9 +657,9 @@ export default {
         .firestore()
         .collection("oppoA93")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListoppoA93 = data;
@@ -668,9 +669,9 @@ export default {
         .firestore()
         .collection("XiaomiMi10TPro5G")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListXiaomiMi10TPro5G = data;
@@ -679,9 +680,9 @@ export default {
         .firestore()
         .collection("XiaomiMiA3")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListXiaomiMiA3 = data;
@@ -690,9 +691,9 @@ export default {
         .firestore()
         .collection("XiaomiRedminote8")
         .orderBy("idname")
-        .onSnapshot((querySnapshot) => {
+        .onSnapshot(querySnapshot => {
           var data = [];
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach(doc => {
             data.push(doc.data());
           });
           this.textListXiaomiRedminote8 = data;
@@ -707,7 +708,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       this.$store.commit("depad");
@@ -721,7 +722,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -734,7 +735,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -748,7 +749,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -761,7 +762,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -774,7 +775,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -788,7 +789,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -801,7 +802,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -814,7 +815,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -828,7 +829,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -841,7 +842,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -854,7 +855,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
     },
@@ -867,7 +868,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       this.$store.commit("depad");
@@ -879,7 +880,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -890,7 +891,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -901,7 +902,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -912,7 +913,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -923,7 +924,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -934,7 +935,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -945,7 +946,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -956,7 +957,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -967,7 +968,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -978,7 +979,7 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
       firebase
@@ -989,14 +990,14 @@ export default {
         .then(() => {
           console.log("Document successfully deleted!");
         })
-        .catch((error) => {
+        .catch(error => {
           console.error("Error removing document: ", error);
         });
-    },
+    }
   },
   created() {
     this.getData();
-  },
+  }
 };
 </script>
 

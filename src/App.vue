@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="/">PHONE<span>STONE</span></a>
+        <a class="navbar-brand" href="/">PHONE<span class="dee">STONE</span></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -30,49 +30,50 @@
                 ><i class="fa fa-shopping-basket"></i
               ></a>
             </li>
-            <img class="gimg" :src="photoUrl" >
+            <img class="gimg" :src="photoUrl" />
           </ul>
         </div>
       </div>
     </nav>
-     <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import firebase from 'firebase/app'
+import firebase from "firebase/app";
 
 export default {
-  data(){
-    return{
-      photoUrl:null,
-    }
+  data() {
+    return {
+      photoUrl: null
+    };
   },
   beforeCreate() {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged(user => {
       if (user != null) {
         // User is signed in.
         //ให้แสดง ชื่อ รูป e-mail
         // this.namee = user.displayName
         // this.email = user.email
-        this.photoUrl = user.photoURL
+        this.photoUrl = user.photoURL;
       } else {
         // No user is signed in.
         //กลับไปหน้า login
-        this.$router.replace('/login')
+        this.$router.replace("/login");
       }
-    })
-  },
-}
+    });
+  }
+};
 </script>
-
-
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100&family=Poppins:wght@100&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
-.navbar{
+.navbar {
   height: auto;
+}
+.container .dee {
+  font-size: 20px;
 }
 .navbar-brand {
   font-weight: bold;
@@ -92,14 +93,14 @@ export default {
 .nav-item {
   margin: 0 15px;
 }
-.gimg{
+.gimg {
   width: 10%;
   border-radius: 20px;
 }
-.app{
+.app {
   background-color: cadetblue;
 }
-.nav-link .fa{
+.nav-link .fa {
   font-size: 15px;
   color: rgb(255, 167, 4);
 }

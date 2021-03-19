@@ -5,14 +5,16 @@
       <form action="">
         <div class="textbox">
           <i class="fa fa-users"></i>
-          <input type="text" name=" " id="" placeholder="name" required/>
+          <input type="text" name=" " id="" placeholder="name" required />
         </div>
         <div class="textbox">
           <i class="fa fa-key"></i>
           <input type="password" name=" " id="" placeholder="****" required />
         </div>
         <div class="btn">
-         <a href="/cart" @click="sigin()"><input type="submit" value="Sign in"  /></a> 
+          <a href="/cart" @click="sigin()"
+            ><input type="submit" value="Sign in"
+          /></a>
         </div>
       </form>
     </div>
@@ -23,9 +25,9 @@
 export default {
   methods: {
     sigin() {
-      this.$router.replace("/cart");
-    },
-  },
+      this.$router.replace("/result");
+    }
+  }
 };
 </script>
 

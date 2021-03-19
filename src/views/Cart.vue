@@ -11,7 +11,7 @@ import Cart from "@/components/Busket.vue";
 export default {
   name: "Home",
   components: {
-    Cart,
-  },
+    Cart
+  }
 };
 </script>

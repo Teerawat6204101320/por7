@@ -33,7 +33,7 @@ export default {
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then((result) => {
+        .then(result => {
           /** @type {firebase.auth.OAuthCredential} */
           const credential = result.credential;
 
@@ -46,7 +46,7 @@ export default {
           // ...
           this.$router.replace("/");
         })
-        .catch((error) => {
+        .catch(error => {
           // Handle Errors here.
           const errorCode = error.code;
           console.log(errorCode);
@@ -61,7 +61,7 @@ export default {
           console.log("Sign-out successful.");
           this.$router.replace("/thk"); //ทำไป index ไม่ได้
         })
-        .catch((error) => {
+        .catch(error => {
           // An error happened.
           console.log(error);
         });
@@ -72,7 +72,7 @@ export default {
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then((result) => {
+        .then(result => {
           /** @type {firebase.auth.OAuthCredential} */
           var credential = result.credential;
 
@@ -84,13 +84,13 @@ export default {
           console.log(accessToken);
           // ...
         })
-        .catch((error) => {
+        .catch(error => {
           // Handle Errors here.
           const errorCode = error.code;
           console.log(errorCode);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 <style>
